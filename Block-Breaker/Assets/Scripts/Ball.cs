@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] PaddleMovementController paddle1;
-    [SerializeField] Vector2 paddleLaunchVelocity;
+    [SerializeField] private PaddleMovementController paddle1;
+    [SerializeField] private Vector2 paddleLaunchVelocity;
 
 
     private Vector2 paddleToBallVector;
@@ -25,7 +25,7 @@ public class Ball : MonoBehaviour
     {
         if(hasStarted == false)
         {
-            LockPosToPaddle();
+            LockBallPosToPaddle();
             LaunchOnMouseClick();
         }
 
@@ -40,7 +40,7 @@ public class Ball : MonoBehaviour
         }
     }
 
-    private void LockPosToPaddle()
+    private void LockBallPosToPaddle()
     {
         Vector2 paddlePos = new Vector2(paddle1.transform.position.x, paddle1.transform.position.y);
 
