@@ -6,5 +6,4 @@ public class Block : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
 }
