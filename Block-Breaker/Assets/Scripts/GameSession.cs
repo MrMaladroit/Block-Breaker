@@ -1,20 +1,35 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class GameStatus : MonoBehaviour
+public class GameSession : MonoBehaviour
 {
     [Range(0.1f, 5f)] [SerializeField] private float gameSpeed = 1f;
     [SerializeField] private int pointsPerBlockDestoryed = 3;
     [SerializeField] private int currentScore = 0;
-
     [SerializeField] private Text scoreText;
 
+    private GameSession instance; 
+
+    private void Awake()
+    {
+        int gameStatusCount = FindObjectsOfType<GameSession>().Length;
+
+        if(gameStatusCount > 1)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
     private void Start()
     {
         scoreText.text = "Score: " + currentScore.ToString();
     }
 
-    void Update()
+    private void Update()
     {
         Time.timeScale = gameSpeed;
     }
@@ -23,5 +38,10 @@ public class GameStatus : MonoBehaviour
     {
         currentScore += pointsPerBlockDestoryed;
         scoreText.text = "Score: " + currentScore.ToString();
+    }
+
+    public void ResetGameSessionGameObject()
+    {
+        Destroy(gameObject);
     }
 }
