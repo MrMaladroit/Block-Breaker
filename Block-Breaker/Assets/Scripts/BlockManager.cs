@@ -18,7 +18,7 @@ public class BlockManager : MonoBehaviour
             sceneLoader.LoadNextScene();
         }
     }
-    public void AddToBlockCount()
+    public void AddToBreakableBlocks()
     {
         totalBlockCount++;
     }
