@@ -631,10 +631,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 224420394906006606, guid: 8475632e24e71044ba8c06f311b4e2e3,
+    - target: {fileID: 224592342508910050, guid: 8475632e24e71044ba8c06f311b4e2e3,
         type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
+      propertyPath: m_AnchoredPosition.x
+      value: -24
+      objectReference: {fileID: 0}
+    - target: {fileID: 114387465049377260, guid: 8475632e24e71044ba8c06f311b4e2e3,
+        type: 2}
+      propertyPath: pointsPerBlockDestoryed
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8475632e24e71044ba8c06f311b4e2e3, type: 2}
@@ -916,6 +921,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114549978731209356, guid: dba5bcd451e585945933490041cce8d9,
+        type: 2}
+      propertyPath: damageBlockSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3ff5e1267730c464099042e798d0dcee,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dba5bcd451e585945933490041cce8d9, type: 2}
   m_IsPrefabAsset: 0

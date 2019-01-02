@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class GameSession : MonoBehaviour
@@ -7,6 +8,7 @@ public class GameSession : MonoBehaviour
     [SerializeField] private int pointsPerBlockDestoryed = 3;
     [SerializeField] private int currentScore = 0;
     [SerializeField] private Text scoreText;
+    [SerializeField] private bool isAutoPlayEnabled;
 
     private GameSession instance; 
 
@@ -24,6 +26,8 @@ public class GameSession : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+
+
     private void Start()
     {
         scoreText.text = "Score: " + currentScore.ToString();
@@ -44,4 +48,10 @@ public class GameSession : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public bool IsAutoPlayEnabled()
+    {
+        return isAutoPlayEnabled;
+    }
+    
 }
